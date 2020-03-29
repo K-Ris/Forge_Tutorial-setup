@@ -1,4 +1,4 @@
-package com.chaotistin.mytutorial.setup;
+package com.chaotistin.mytutorial.proxy;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
