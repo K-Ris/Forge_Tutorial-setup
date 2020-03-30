@@ -2,12 +2,16 @@ package com.chaotistin.mytutorial;
 
 import com.chaotistin.mytutorial.blocks.FirstBlock;
 import com.chaotistin.mytutorial.blocks.ModBlocks;
+import com.chaotistin.mytutorial.entities.WeirdMobEntity;
 import com.chaotistin.mytutorial.items.FirstItem;
+import com.chaotistin.mytutorial.items.WeirdMobEggItem;
 import com.chaotistin.mytutorial.proxy.ClientProxy;
 import com.chaotistin.mytutorial.proxy.IProxy;
 import com.chaotistin.mytutorial.proxy.ServerProxy;
 import com.chaotistin.mytutorial.setup.ModSetup;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -24,6 +28,8 @@ import org.apache.logging.log4j.Logger;
 public class MyTutorial
 {
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
+
+    public static final String MODID = "mytutorial";
 
     public static ModSetup setup = new ModSetup();
 
@@ -58,6 +64,15 @@ public class MyTutorial
                 .group(setup.itemGroup);
             event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("firstblock"));
             event.getRegistry().register(new FirstItem());
+            event.getRegistry().register(new WeirdMobEggItem());
+        }
+        @SubscribeEvent
+        public static void onEntityRegistry(final RegistryEvent.Register<EntityType<?>> event) {
+            event.getRegistry().register(EntityType.Builder.create(WeirdMobEntity::new, EntityClassification.CREATURE)
+                    .size(1, 1)
+                    .setShouldReceiveVelocityUpdates(false)
+                    .build("weirdmob").setRegistryName(MyTutorial.MODID, "weirdmob"));
+
         }
     }
 }

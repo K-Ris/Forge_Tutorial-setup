@@ -6,4 +6,7 @@ public class ModItems {
 
     @ObjectHolder("mytutorial:firstitem")
     public static FirstItem FIRSTITEM;
+
+    @ObjectHolder("mytutorial:weirdmob_egg")
+    public static WeirdMobEggItem WEIRDMOB_EGG;
 }
