@@ -36,7 +36,7 @@ public class MyTutorial
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
+        
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
