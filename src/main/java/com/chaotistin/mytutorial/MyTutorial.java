@@ -5,6 +5,7 @@ import com.chaotistin.mytutorial.blocks.ModBlocks;
 import com.chaotistin.mytutorial.proxy.ClientProxy;
 import com.chaotistin.mytutorial.proxy.IProxy;
 import com.chaotistin.mytutorial.proxy.ServerProxy;
+import com.chaotistin.mytutorial.setup.ModSetup;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -23,6 +24,8 @@ public class MyTutorial
 {
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
+    public static ModSetup setup = new ModSetup();
+
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -36,7 +39,8 @@ public class MyTutorial
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        
+        setup.init();
+        proxy.init();
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
@@ -49,7 +53,9 @@ public class MyTutorial
         }
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-            event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, new Item.Properties()).setRegistryName("firstblock"));
+            Item.Properties properties = new Item.Properties()
+                .group(setup.itemGroup);
+            event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("firstblock"));
         }
     }
 }
