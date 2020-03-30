@@ -1,4 +1,7 @@
 {
   "block.mytutorial.firstblock": "First Block",
-  "itemGroup.mytutorial": "Tutorial"
+
+  "itemGroup.mytutorial": "Tutorial",
+
+  "item.mytutorial.firstitem": "First Item"
 }

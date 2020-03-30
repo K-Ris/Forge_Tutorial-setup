@@ -2,6 +2,7 @@ package com.chaotistin.mytutorial;
 
 import com.chaotistin.mytutorial.blocks.FirstBlock;
 import com.chaotistin.mytutorial.blocks.ModBlocks;
+import com.chaotistin.mytutorial.items.FirstItem;
 import com.chaotistin.mytutorial.proxy.ClientProxy;
 import com.chaotistin.mytutorial.proxy.IProxy;
 import com.chaotistin.mytutorial.proxy.ServerProxy;
@@ -56,6 +57,7 @@ public class MyTutorial
             Item.Properties properties = new Item.Properties()
                 .group(setup.itemGroup);
             event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("firstblock"));
+            event.getRegistry().register(new FirstItem());
         }
     }
 }
