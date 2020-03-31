@@ -11,7 +11,7 @@ public class WeirdMobRenderer extends MobRenderer<WeirdMobEntity, WeirdMobModel>
     private static final ResourceLocation TEXTURE = new ResourceLocation(MyTutorial.MODID, "textures/entity/weirdmob.png");
 
     public WeirdMobRenderer(EntityRendererManager manager) {
-        super(manager, new WeirdMobModel(), 0.5f);
+        super(manager, new WeirdMobModel(), 0.5f); //0.5f = shadow size
     }
 
     @Nullable
