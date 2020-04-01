@@ -6,4 +6,6 @@ import net.minecraftforge.registries.ObjectHolder;
 public class MobEntities {
     @ObjectHolder("mytutorial:weirdmob")
     public static EntityType<WeirdMobEntity> WEIRDMOB;
+    @ObjectHolder("mytutorial:bigmob")
+    public static EntityType<BigMobEntity> BIGMOB;
 }

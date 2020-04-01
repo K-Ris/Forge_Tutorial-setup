@@ -2,7 +2,9 @@ package com.chaotistin.mytutorial;
 
 import com.chaotistin.mytutorial.blocks.FirstBlock;
 import com.chaotistin.mytutorial.blocks.ModBlocks;
+import com.chaotistin.mytutorial.entities.BigMobEntity;
 import com.chaotistin.mytutorial.entities.WeirdMobEntity;
+import com.chaotistin.mytutorial.items.BigMobEggItem;
 import com.chaotistin.mytutorial.items.FirstItem;
 import com.chaotistin.mytutorial.items.WeirdMobEggItem;
 import com.chaotistin.mytutorial.proxy.ClientProxy;
@@ -65,6 +67,7 @@ public class MyTutorial
             event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("firstblock"));
             event.getRegistry().register(new FirstItem());
             event.getRegistry().register(new WeirdMobEggItem());
+            event.getRegistry().register(new BigMobEggItem());
         }
         @SubscribeEvent
         public static void onEntityRegistry(final RegistryEvent.Register<EntityType<?>> event) {
@@ -72,6 +75,10 @@ public class MyTutorial
                     .size(1, 1)
                     .setShouldReceiveVelocityUpdates(false)
                     .build("weirdmob").setRegistryName(MyTutorial.MODID, "weirdmob"));
+            event.getRegistry().register(EntityType.Builder.create(BigMobEntity::new, EntityClassification.CREATURE)
+                    .size(1, 1)
+                    .setShouldReceiveVelocityUpdates(false)
+                    .build("bigmob").setRegistryName(MyTutorial.MODID, "bigmob"));
 
         }
     }

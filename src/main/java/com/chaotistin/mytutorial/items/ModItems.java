@@ -9,4 +9,7 @@ public class ModItems {
 
     @ObjectHolder("mytutorial:weirdmob_egg")
     public static WeirdMobEggItem WEIRDMOB_EGG;
+
+    @ObjectHolder("mytutorial:bigmob_egg")
+    public static WeirdMobEggItem BIGMOB_EGG;
 }
