@@ -8,7 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import javax.annotation.Nullable;
 
 public class BigMobRenderer extends MobRenderer<BigMobEntity, BigMobModel> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(MyTutorial.MODID, "textures/entity/weirdmob.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(MyTutorial.MODID, "textures/entity/bigmob.png");
 
     public BigMobRenderer(EntityRendererManager manager) {
         super(manager, new BigMobModel(), 0.5f); //0.5f = shadow size

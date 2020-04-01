@@ -70,8 +70,8 @@ public class WeirdMobModel extends QuadrupedModel<WeirdMobEntity> {
 
     @Override
     public void setRotationAngles(WeirdMobEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor) {
-        this.headModel.rotateAngleX = headPitch * ((float)Math.PI / 180F);
-        this.headModel.rotateAngleY = netHeadYaw * ((float)Math.PI / 180F);
+        this.getHead().rotateAngleX = headPitch * ((float)Math.PI / 180F);
+        this.getHead().rotateAngleY = netHeadYaw * ((float)Math.PI / 180F);
         //this.main.rotateAngleX = ((float)Math.PI / 2F);
         this.leg_front_left.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
         this.leg_front_right.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;

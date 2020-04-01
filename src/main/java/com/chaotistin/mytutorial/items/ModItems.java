@@ -11,5 +11,5 @@ public class ModItems {
     public static WeirdMobEggItem WEIRDMOB_EGG;
 
     @ObjectHolder("mytutorial:bigmob_egg")
-    public static WeirdMobEggItem BIGMOB_EGG;
+    public static BigMobEggItem BIGMOB_EGG;
 }

@@ -1,7 +1,5 @@
 package com.chaotistin.mytutorial.entities;
 
-import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.QuadrupedModel;
 import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.ModelBox;
@@ -21,7 +19,7 @@ public class BigMobModel extends QuadrupedModel<BigMobEntity> {
     private final RendererModel bone5;
 
     public BigMobModel() {
-        super(30, 0.0F);
+        super(6, 0.0F);
         textureWidth = 128;
         textureHeight = 128;
 

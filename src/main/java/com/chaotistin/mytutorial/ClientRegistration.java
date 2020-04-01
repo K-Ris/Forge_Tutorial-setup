@@ -13,5 +13,7 @@ public class ClientRegistration {
     @SubscribeEvent
     public static void onItemColor(ColorHandlerEvent.Item event) {
         event.getItemColors().register((stack, i) -> 0xff0000, ModItems.WEIRDMOB_EGG);
+        event.getItemColors().register((stack, i) -> 0xff0000, ModItems.BIGMOB_EGG);
     }
+
 }
